@@ -1,1 +1,1 @@
-web: cd public && python -m http.server --bind 0.0.0.0 $PORT 
+web: cd build && python -m http.server --bind 0.0.0.0 $PORT 
