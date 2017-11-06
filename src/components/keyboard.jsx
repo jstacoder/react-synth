@@ -35,11 +35,11 @@ function createNoteTable() {
 //  noteFreq[2]["G#"] = 103.826174394986284;
   noteFreq[2]["A"] = 110.000000000000000;
 //  noteFreq[2]["A#"] = 116.540940379522479;
-  noteFreq[2]["B"] = 123.470825314031027;
+  noteFreq[2]["B"] = 123.470825314031027;*/
 
   noteFreq[3]["C"] = 130.812782650299317;
   //noteFreq[3]["C#"] = 138.591315488436048;
-  noteFreq[3]["D"] = 146.832383958703780;*/
+  noteFreq[3]["D"] = 146.832383958703780;
  // noteFreq[3]["D#"] = 155.563491861040455;
   noteFreq[3]["E"] = 164.813778456434964;
   noteFreq[3]["F"] = 174.614115716501942;
@@ -101,7 +101,7 @@ function createNoteTable() {
 //  noteFreq[7]["A#"] = 3729.310092144719331;
   noteFreq[7]["B"] = 3951.066410048992894;
 
-  noteFreq[8]["C"] = 4186.009044809578154;
+  //noteFreq[8]["C"] = 4186.009044809578154;
   return noteFreq;  
 }
 
@@ -129,10 +129,7 @@ export default class Keyboard extends Component {
         osc.type = this.props.oscType || 'sawtooth'
         osc.frequency.value = freq
         osc.start() 
-        osc.connect(this.masterGainNode)
-        setTimeout(()=>{
-            this.stopKey({note, octave})            
-        }, 1000*1)
+        osc.connect(this.masterGainNode)        
     }
     stopKey = ({note, octave}) =>{
         const osc = this.oscs[octave][note]
