@@ -1,1 +1,1 @@
-web: python -m http.server $PORT public/
+web: cd public && python -m http.server 0.0.0.0 $PORT 
